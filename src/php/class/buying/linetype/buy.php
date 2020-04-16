@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace buying\linetype;
 
 class buy extends \Linetype
 {

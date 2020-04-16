@@ -1,5 +1,5 @@
 <?php
-namespace blend;
+namespace buying\blend;
 
 class buys extends \Blend
 {
