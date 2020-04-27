@@ -53,7 +53,7 @@ class buy extends \Linetype
         ];
     }
 
-    public function astext($line, $child_sets)
+    public function astext($line)
     {
         $skumetas = get_sku_meta();
 
@@ -66,7 +66,7 @@ class buy extends \Linetype
 
         $subtotal = '0.00';
 
-        foreach ($child_sets['stocktransfers']->lines as $s => $stocktransfer) {
+        foreach ($line->stocktransfers as $s => $stocktransfer) {
             $meta = @$skumetas[$stocktransfer->sku];
 
             $printout .= '[  ]  ' . (@$meta->title ?: $stocktransfer->sku) . "\n";
@@ -80,8 +80,8 @@ class buy extends \Linetype
             $printout .= "\n\n";
         }
 
-        if (isset($child_sets['transactions']) and property_exists($child_sets['transactions'], 'summary')) {
-            $summary = $child_sets['transactions']->summary;
+        if (property_exists($line, 'transactions_summary')) {
+            $summary = $line->transactions_summary;
             $printout .=  "\n";
 
             $total = bcmul('-1', $summary->amount, 2);
