@@ -18,18 +18,18 @@ class buy extends \Linetype
             (object) [
                 'name' => 'date',
                 'type' => 'date',
-                'fuse' => 't.date',
+                'fuse' => '{t}.date',
                 'main' => true,
             ],
             (object) [
                 'name' => 'shop',
                 'type' => 'text',
-                'fuse' => 't.shop',
+                'fuse' => '{t}.shop',
             ],
             (object) [
                 'name' => 'branch',
                 'type' => 'text',
-                'fuse' => 't.branch',
+                'fuse' => '{t}.branch',
             ],
         ];
         $this->children = [
@@ -47,9 +47,9 @@ class buy extends \Linetype
             ]
         ];
         $this->unfuse_fields = [
-            't.date' => ':date',
-            't.shop' => ':shop',
-            't.branch' => ':branch',
+            '{t}.date' => ':{t}_date',
+            '{t}.shop' => ':{t}_shop',
+            '{t}.branch' => ':{t}_branch',
         ];
     }
 
