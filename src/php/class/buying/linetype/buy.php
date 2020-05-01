@@ -31,6 +31,13 @@ class buy extends \Linetype
                 'type' => 'text',
                 'fuse' => '{t}.branch',
             ],
+            (object) [
+                'name' => 'shoppinglist',
+                'icon' => 'docpdf',
+                'type' => 'file',
+                'generable' => true,
+                'path' => 'buy',
+            ],
         ];
         $this->children = [
             (object) [
