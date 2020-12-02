@@ -54,9 +54,18 @@ class buy extends \Linetype
             ]
         ];
         $this->unfuse_fields = [
-            '{t}.date' => ':{t}_date',
-            '{t}.shop' => ':{t}_shop',
-            '{t}.branch' => ':{t}_branch',
+            '{t}.date' => (object) [
+                'expression' => ':{t}_date',
+                'type' => 'date',
+            ],
+            '{t}.shop' => (object) [
+                'expression' => ':{t}_shop',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.branch' => (object) [
+                'expression' => ':{t}_branch',
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 
