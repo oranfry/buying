@@ -1,9 +1,12 @@
 {
-    "name": "oranfry/buying",
-    "version": "1.0.0",
     "autoload": {
         "psr-4": {
             "buying\\": "classes"
         }
-    }
+    },
+    "name": "oranfry/buying",
+    "require": {
+        "oranfry/simple-fields": "*"
+    },
+    "version": "1.0.0"
 }

@@ -4,6 +4,8 @@ namespace buying\linetype;
 
 class buy extends \jars\Linetype
 {
+    use \simplefields\traits\SimpleFields;
+
     public function __construct()
     {
         $this->table = 'buy';
